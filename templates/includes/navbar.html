@@ -24,21 +24,33 @@
                     </li>
                     <li class="nav-item">
                         <a
+                        {% if 'cars' in request.path %}
+                        class = "nav-link active"
+                        {% else %}
                         class="nav-link"
-                         href="#">
+                        {% endif %}
+                         href="{% url 'cars' %}">
                             Cars
                         </a>
                     </li>
                     <li class="nav-item">
                         <a
+                        {% if 'about' in request.path %}
+                        class = "nav-link active"
+                        {% else %}
                         class="nav-link"
+                        {% endif %}
                          href="{% url 'about' %}">
                             About
                         </a>
                     </li>
                     <li class="nav-item">
                         <a
+                        {% if 'Services' in request.path %}
+                        class = "nav-link active"
+                        {% else %}
                         class="nav-link"
+                        {% endif %}
                          href="{% url 'services' %}">
                             Services
                         </a>
@@ -47,7 +59,11 @@
 
                     <li class="nav-item dropdown">
                         <a
+                        {% if 'contact' in request.path %}
+                        class = "nav-link active"
+                        {% else %}
                         class="nav-link"
+                        {% endif %}
                          href="{% url 'contact' %}">Contact</a>
                     </li>
                     <li class="nav-item dropdown m-hide">
