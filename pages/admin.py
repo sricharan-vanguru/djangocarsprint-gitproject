@@ -10,7 +10,7 @@ class Teamadmin(admin.ModelAdmin):
   
   thumbnail.short_description = 'Photo'
   
-  list_display = ('id','first_name','designation','created_date',)
+  list_display = ('thumbnail','id','first_name','designation','created_date',)
   list_display_links = ('id','first_name',)
   search_fields = ('first_name','last_name','designation',)
 
