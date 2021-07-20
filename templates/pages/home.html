@@ -11,7 +11,7 @@
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner banner-slider-inner text-center">
             <div class="carousel-item banner-max-height active item-bg">
-                <img class="d-block w-100 h-100" src="{% static 'img/car-1.jpg' %}" alt="banner">
+                <img class="d-block w-100 h-100" src="{% static 'img/car-12.jpg' %}" alt="banner">
                 <div class="carousel-content container banner-info-2 bi-2 text-left">
                     <h3>Wow Factor Standard</h3>
                     <h5>Allow us to guide you through the innovative stress<br>
@@ -20,7 +20,7 @@
                 </div>
             </div>
             <div class="carousel-item banner-max-height item-bg">
-                <img class="d-block w-100 h-100" src="img/car-2.jpg" alt="banner">
+                <img class="d-block w-100 h-100" src="{% static 'img/car-2.jpg' %}" alt="banner">
                 <div class="carousel-content container banner-info-2 bi-2 text-left">
                     <h3>Explore Your Dream Car</h3>
                     <h5>Allow us to guide you through the innovative stress<br>
@@ -29,7 +29,7 @@
                 </div>
             </div>
             <div class="carousel-item banner-max-height item-bg">
-                <img class="d-block w-100 h-100" src="img/car-3.jpg" alt="banner">
+                <img class="d-block w-100 h-100" src="{% static 'img/car-11.jpg' %}" alt="banner">
                 <div class="carousel-content container banner-info-2 bi-2 text-left">
                     <h3>We Are Wheel</h3>
                     <h5>Allow us to guide you through the innovative stress<br>
@@ -183,13 +183,13 @@
                     </div>
                 </div>
                 {% endfor %}
-            <div class="slick-btn">
-                <div class="slick-prev slick-arrow-buton sab-4">
-                    <i class="fa fa-angle-left"></i>
-                </div>
-                <div class="slick-next slick-arrow-buton sab-3">
-                    <i class="fa fa-angle-right"></i>
-                </div>
+        </div>
+        <div class="slick-btn">
+            <div class="slick-prev slick-arrow-buton sab-4">
+                <i class="fa fa-angle-left"></i>
+            </div>
+            <div class="slick-next slick-arrow-buton sab-3">
+                <i class="fa fa-angle-right"></i>
             </div>
         </div>
     </div>
@@ -302,7 +302,7 @@
                     <div class="team-1">
                         <div class="photo">
                             <a href="#">
-                                <img src="{{ team.photo.url }}" alt="team-1" class="img-fluid">
+                                <img src="{{ team.photo.url }}" alt="team-1" class="img-fluid" style="min-height: 262px; max-height: 262px;">
                             </a>
                             <div class="social-list clearfix">
                                 <a href="{{team.facebook_link}}" target="_blank" class="facebook-bg"><i class="fa fa-facebook"></i></a>
@@ -340,78 +340,4 @@
 </div>
 <!-- Intro section end -->
 
-
-<!-- Car Overview Modal -->
-<div class="car-model-2">
-    <div class="modal fade" id="carOverviewModal" tabindex="-1" role="dialog" aria-labelledby="carOverviewModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <div class="modal-title" id="carOverviewModalLabel">
-                        <h4>Explore Your Dream Car</h4>
-                        <h5><i class="flaticon-pin"></i> 123 Kathal St. Tampa City,</h5>
-                    </div>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="row modal-raw">
-                        <div class="col-lg-6 modal-left">
-                            <div class="item active">
-                                <img src="img/car-13.jpg" alt="best-car" class="img-fluid modalLabel-1">
-                                <img src="img/car-14.jpg" alt="best-car" class="img-fluid modalLabel-2">
-                                <div class="sobuz">
-                                    <div class="price-box" style="padding-bottom: 5px;">
-                                        <span class="del-2">$1050.00</span>
-                                    </div>
-                                    <div class="">
-                                        <a href="car-details.html" class="btn btn-md btn-round btn-theme">Convertible</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 modal-right">
-                            <div class="modal-right-content">
-                                <section>
-                                    <h3>Features</h3>
-                                    <div class="features">
-                                        <ul class="bullets">
-                                            <li>Cruise Control</li>
-                                            <li>Airbags</li>
-                                            <li>Air Conditioning</li>
-                                            <li>Alarm System</li>
-                                            <li>Audio Interface</li>
-                                            <li>CDR Audio</li>
-                                            <li>Seat Heating</li>
-                                            <li>ParkAssist</li>
-                                        </ul>
-                                    </div>
-                                </section>
-                                <section>
-                                    <h3>Overview</h3>
-                                    <ul class="bullets">
-                                        <li>Model</li>
-                                        <li>Year</li>
-                                        <li>Condition</li>
-                                        <li>Price</li>
-                                        <li>Audi</li>
-                                        <li>2020</li>
-                                        <li>Brand New</li>
-                                        <li>$178,000</li>
-                                    </ul>
-                                </section>
-                                <div class="description">
-                                    <h3>Description</h3>
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</p>
-                                    <a href="car-details.html" class="btn btn-md btn-round btn-theme">Show Detail</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 {% endblock %}
