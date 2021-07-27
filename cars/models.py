@@ -119,3 +119,10 @@ class Car(models.Model):
 
     def __str__(self):
         return self.car_title
+
+class Order(models.Model):
+    car = models.ForeignKey(Car,max_length=200,null=True, blank=True, on_delete = models.SET_NULL)
+    created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.car.car_title

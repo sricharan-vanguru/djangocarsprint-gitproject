@@ -1,6 +1,9 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Car
+from .models import Car,Order
 from django.core.paginator import Paginator,EmptyPage,PageNotAnInteger
+from django.http import JsonResponse
+import json
+
 # Create your views here.
 def cars(request):
     cars = Car.objects.order_by('-created_date')
@@ -84,3 +87,29 @@ def search(request):
     }
     return render(request,'cars/search.html',data)
 
+
+
+def simpleCheckout(request, id):
+    cars = get_object_or_404(Car,pk=id)
+
+    data = {
+        'cars': cars,
+    }
+    return render(request, 'cars/simple_checkout.html',data)
+
+
+def checkout(request, pk):
+    car = Car.objects.get(id=pk)
+    data = {
+        'car':car,
+    }
+    return render(request, 'cars/checkout.html',data)
+
+def paymentComplete(request):
+    body = json.loads(request.body)
+    print('BODY:',body)
+    car = Car.objects.get(id = body['carid'])
+    Order.objects.create(
+        car = car
+    )
+    return JsonResponse('Payment completed',safe=False)    

@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="sub-banner overview-bgi">
+    <div class="container breadcrumb-area">
+        <div class="breadcrumb-areas">
+            <h1>{{cars.car_title}}</h1>
+            <ul class="breadcrumbs">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li class="active">{{cars.car_title}}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>checkout</title>
+</head>
+<body>
+    <h1>Simple checkout</h1>
+    <div id="paypal-button-container"></div>
+
+    <!-- Include the PayPal JavaScript SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=AaVp0ZBmaM7blXwDKJtOGE-FCrLBBPy_fOJsGGtcR1fWjT2HVBplsNHfWvkLQY7DNOXB_oHF2fFrR53L&currency=USD"></script>
+
+    <script>
+        // Render the PayPal button into #paypal-button-container
+        paypal.Buttons({
+            style: {
+                color:  'blue',
+                shape:  'rect',
+                label:  'pay',
+                height: 40
+            },
+            // Set up the transaction
+            createOrder: function(data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: '{{cars.price}}',
+                        }
+                    }]
+                });
+            },
+
+            // Finalize the transaction
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                    // Show a success message to the buyer
+                    alert('Transaction completed by ' + details.payer.name.given_name + '!');
+                });
+            }
+
+
+        }).render('#paypal-button-container');
+    </script>
+</body>
+</html>
+
+{% endblock %}

@@ -201,7 +201,9 @@
                                 <span>Owners: </span>{{single_car.no_of_owners}}
                             </li>   
                         </ul>
-                        <button class="btn btn-outline-danger bomd btn-block btn-lg" data-toggle="modal" data-target="#">Order Now</button>
+
+                            <a href="{% url 'checkout' single_car.id %}" class="btn btn-outline-danger bomd btn-block btn-lg">
+                            Order Now for {{ single_car.price }}</a>
                     </div>
 
                     <!-- Inquiry Modal -->

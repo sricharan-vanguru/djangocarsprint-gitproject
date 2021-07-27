@@ -80,3 +80,4 @@ def logout(request):
         messages.success(request,'You are succefully logged out')
         return redirect('login')
     return redirect('home')
+    

@@ -2007,7 +2007,7 @@ input[type=checkbox]:checked + label:before {
 }
 
 .cat-1-bg {
-    background-image: url(../img/latest-offers/img-1.jpg);
+    background-image: url(../img/latest-offers/img-12.jpg);
 }
 
 .cat-2-bg {
@@ -4892,7 +4892,7 @@ footer {
 
 /** Coming soon start **/
 .coming-soon {
-    background: rgba(0, 0, 0, 0.04) url(../img/car-1.jpg) top left repeat;
+    background: rgba(0, 0, 0, 0.04) url(../img/car-12.jpg) top left repeat;
     background-size: cover;
     top: 0;
     width: 100%;
@@ -6068,7 +6068,7 @@ footer {
 
 /** Sub Banner start **/
 .sub-banner {
-    background: rgba(0, 0, 0, 0.04) url(../img/car-1.jpg) top left repeat;
+    background: rgba(0, 0, 0, 0.04) url(../img/car-12.jpg) top left repeat;
     background-size: cover;
     height: 360px;
     background-position: center center;

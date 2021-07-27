@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Car
+from .models import Car,Order
 from django.utils.html import format_html
 # Register your models here.
 class CarAdmin(admin.ModelAdmin):
@@ -15,3 +15,4 @@ class CarAdmin(admin.ModelAdmin):
     list_filter = ('city','model','body_style','fuel_type')
 
 admin.site.register(Car,CarAdmin)
+admin.site.register(Order)
